@@ -17,5 +17,17 @@ yellow_timing = SPEED_MULTIPLIER;
 % MAIN SCRIPT
 % Run starting lights
 % Get user input, current via terminal
+% Buttons:
+% Red Light:
+% Yellow Light:
+% Green Light:
+Error = ljud_ePut(ljHandle, LJ_ioPUT_DIGITAL_BIT, 6, 1, 0);
+Error_Message(Error)
+
+Error = ljud_ePut(ljHandle, LJ_ioPUT_DIGITAL_BIT, 4, 1, 0);
+Error_Message(Error)
+
+Error = ljud_ePut(ljHandle, LJ_ioPUT_DIGITAL_BIT, 3, 1, 0);
+Error_Message(Error)
 
 
