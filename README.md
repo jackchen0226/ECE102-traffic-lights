@@ -26,6 +26,7 @@ Run LJ_driver.m from via command line (or script editor).
 ```matlab
 LJ_driver
 ```
+___
 
 ### I/O channels
 
@@ -41,5 +42,5 @@ LJ_driver
 | 7      | E/W traffic green  |  FIO_7  |
 | /      | N/S ped. red       |  DAC_0  |
 | /      | E/W ped. red	      |  DAC_1  |
-| 8      | N/S ped. white     |  EIO_0  |
-| 9      | E/W ped. white     |  EIO_1  |
+| 8  (4) | N/S ped. white     |  EIO_0  |
+| 9  (12)| E/W ped. white     |  EIO_1  |
