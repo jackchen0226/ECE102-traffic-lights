@@ -26,3 +26,20 @@ Run LJ_driver.m from via command line (or script editor).
 ```matlab
 LJ_driver
 ```
+
+### I/O channels
+
+| Bit #  | Light group        | Channel |
+| ------ |:------------------:| -------:|
+| 0      | N/S buttons        |  FIO_0  |
+| 1      | E/W buttons        |  FIO_1  |
+| 2      | N/S traffic red    |  FIO_2  |
+| 3      | E/W traffic red    |  FIO_3  |
+| 4      | N/S traffic yellow |  FIO_4  |
+| 5      | E/W traffic yellow |  FIO_5  |
+| 6      | N/S traffic green  |  FIO_6  |
+| 7      | E/W traffic green  |  FIO_7  |
+| /      | N/S ped. red       |  DAC_0  |
+| /      | E/W ped. red	      |  DAC_1  |
+| 8      | N/S ped. white     |  EIO_0  |
+| 9      | E/W ped. white     |  EIO_1  |
