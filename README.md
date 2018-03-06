@@ -10,7 +10,6 @@ Dependencies:
 1. MATLAB wrapper of LabJack U3 API
 1. MATLAB R2017a or newer
 
-**Note: The directory 'LJ_controls_to_lights/' must be added to the MATLAB path in order for any LabJack light functions to run.**
 ___
 To download and run this code, clone this repository and run matlab **in the directory of the cloned repository.**
 
