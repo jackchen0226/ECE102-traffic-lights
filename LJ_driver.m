@@ -18,7 +18,8 @@ Error_Message(Error)
 Error = ljud_ePut(ljHandle, LJ_ioPUT_DIGITAL_BIT,8,0,0);
 Error_Message(Error)
 
-
+% Add wrapper functions to path
+addpath('LJ_controls_to_lights')
 
 SPEED_MULTIPLIER = 1; % Constant for speed that every timing is divided by
 
