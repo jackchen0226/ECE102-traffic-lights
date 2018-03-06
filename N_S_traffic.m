@@ -23,10 +23,10 @@ function [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on_before, EW_ped_on_before
     NS_yellow(false, ljHandle, lj_dig_bit)
     NS_red(false, ljHandle, lj_dig_bit)
     if (NS_ped_on_before)
-        EW_ped_white(true, ljHandle, lj_dig_bit) % Implement
+        EW_ped_white(true, ljHandle, lj_dig_bit) % Test
         EW_ped_red(false, ljHandle, lj_dig_bit) % Implement
     end
-    [NS_ped_on_1, EW_ped_on_1] = timings(green_light_timing, ljHandle, 'e');
+    [NS_ped_on_1, EW_ped_on_1] = timings(green_light_timing, ljHandle);
     EW_bools = [EW_bools EW_ped_on_1];
     NS_bools = NS_ped_on_1;
     
@@ -36,10 +36,10 @@ function [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on_before, EW_ped_on_before
     NS_green(false, ljHandle, lj_dig_bit)
     NS_yellow(true, ljHandle, lj_dig_bit)
     if (NS_ped_on_before)
-        EW_ped_white(false, ljHandle, lj_dig_bit) % Implement
+        EW_ped_white(false, ljHandle, lj_dig_bit) % Test
         [NS_ped_on_2, EW_ped_on_2] = EW_ped_red(true, ljHandle, lj_dig_bit, yellow_light_timing); % Implement
     else
-        [NS_ped_on_2, EW_ped_on_2] = timings(yellow_light_timing, ljHandle, 'e');
+        [NS_ped_on_2, EW_ped_on_2] = timings(yellow_light_timing, ljHandle);
     end
     EW_bools = [EW_bools, EW_ped_on_2];
     NS_bools = [NS_bools, NS_ped_on_2];
@@ -48,9 +48,8 @@ function [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on_before, EW_ped_on_before
     NS_yellow(false, ljHandle, lj_dig_bit)
     NS_red(true, ljHandle, lj_dig_bit)
     
-    % Check which booleans to pass on
+    % Check which booleans to pass on, if any of the button presses during
+    % the 2 runs of timing were hit, then return a true value.
     EW_ped_on = or(EW_bools);
     NS_ped_on = or(NS_bools);
-    
-    
 end

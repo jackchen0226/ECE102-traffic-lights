@@ -1,10 +1,8 @@
-function [N_S_ped_on, E_W_ped_on] = timings(desired_time, ljHandle, active_ped_light)
+function [N_S_ped_on, E_W_ped_on] = timings(desired_time, ljHandle)
 % Waits until desired_time elapses, checking pedestrian buttons.
 % Inputs:
 %       desired_time : Number of seconds to wait for.
 %       ljHandle : Handle for LabJack U3, necesary for I/O.
-%       active_ped_light : Character, marker for corresponding pedestrian 
-%                          light to be on.
 % Outputs:
 %       N_S_ped_on : Boolean, if the North/South ped. light was pressed.
 %       E_W_ped_on : Boolean, if the East/West ped. light was pressed.
@@ -12,13 +10,6 @@ function [N_S_ped_on, E_W_ped_on] = timings(desired_time, ljHandle, active_ped_l
     ljud_Constants
     N_S_ped_on = false;
     E_W_ped_on = false;
-    if nargin > 2
-        if strcmp(active_ped_light, 'e')
-            E_W_ped_on = true;
-        elseif strcmp(active_ped_light, 'n')
-            N_S_ped_on = true;
-        end
-    end
 
     tStart = tic;
     while toc(tStart) < desired_time
