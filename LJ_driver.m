@@ -24,7 +24,7 @@ addpath('LJ_controls_to_lights')
 SPEED_MULTIPLIER = 1; % Constant for speed that every timing is divided by
 
 % Initialized variables for light timings, need to find these later
-red_timing = SPEED_MULTIPLIER;
+green_timing = SPEED_MULTIPLIER;
 yellow_timing = SPEED_MULTIPLIER;
 
 % MAIN SCRIPT
@@ -32,15 +32,23 @@ yellow_timing = SPEED_MULTIPLIER;
 %NS_yellow(false, ljHandle, LJ_ioPUT_DIGITAL_BIT)
 %N_S_traffic(false, false, 3, 3, ljHandle)
 %pause(3)
-NS_red(false, ljHandle, LJ_ioPUT_DIGITAL_BIT)
+%NS_red(false, ljHandle, LJ_ioPUT_DIGITAL_BIT)
 
 % DAC
-%while true
-    %Error = ljud_ePut(ljHandle, LJ_ioPUT_ANALOG_ENABLE_BIT, 0, 1, 0);
- 
-%   [Error, inVolt] = ljud_eGet(ljHandle, LJ_ioGET_AIN, 0, 0, 0);
-
- %   disp(inVolt)
-  %  pause(0.1)
-%end
-
+[user_response, debug_mode] = prompt_user();
+NS_ped_on = false;
+EW_ped_on = false;
+while ~debug_mode
+    % IMPLEMENT E_W_traffic!!!
+    if strncmp(user_response, 'N', 1) || strnc,p(user_response, 'S', 1)
+        [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
+        [NS_ped_on, EW_ped_on] = E_W_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
+    elseif (strncmp(user_response, 'E', 1) || strncmp(user_response, 'W', 1)
+        [NS_ped_on, EW_ped_on] = E_W_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
+        [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
+    end
+end
+if debug_mode
+    % TEST DEBUG
+    run_debug(user_response, green_timing, yellow_timing, ljHandle)
+end
