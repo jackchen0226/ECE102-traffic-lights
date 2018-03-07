@@ -21,22 +21,25 @@ Error_Message(Error)
 % Add wrapper functions to path
 addpath('LJ_controls_to_lights')
 
-SPEED_MULTIPLIER = 1; % Constant for speed that every timing is divided by
+SPEED_MULTIPLIER = 1.0; % Constant for speed that every timing is divided by
 
 % Initialized variables for light timings, need to find these later
-green_timing = SPEED_MULTIPLIER;
-yellow_timing = SPEED_MULTIPLIER;
+green_timing = 45 / SPEED_MULTIPLIER;
+yellow_timing = 3.0; % Unchangings
 
 % MAIN SCRIPT
 % Various light tests
-[NS_ped, EW_ped] = timings(5, ljHandle);
-NS_green(NS_ped, ljHandle, LJ_ioPUT_DIGITAL_BIT)
+NS_red(true, ljHandle, LJ_ioPUT_DIGITAL_BIT)
+%[NS_ped, EW_ped] = timings(5, ljHandle);
+%NS_green(NS_ped, ljHandle, LJ_ioPUT_DIGITAL_BIT)
 
 % DAC
 %{
 [user_response, debug_mode] = prompt_user();
 NS_ped_on = false;
 EW_ped_on = false;
+
+% not in debug mode
 while ~debug_mode
     % IMPLEMENT E_W_traffic!!!
     if strncmp(user_response, 'N', 1) || strnc,p(user_response, 'S', 1)
