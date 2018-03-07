@@ -8,10 +8,7 @@ function [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on_before, EW_ped_on_before
 %       ljHandle : Handle for LabJack U3, necesary for I/O.
 % Output:
 %       EW_ped_on : Boolean, if button for East/West 
-
-% TODO: Add more implementations
-%       Fix light function implementations
-%       pass on ljHandle
+%       NS_ped_on : Boolean, if button for North/Souths
 
     ljud_Constants
     lj_dig_bit = LJ_ioPUT_DIGITAL_BIT;

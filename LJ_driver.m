@@ -43,7 +43,7 @@ while ~debug_mode
     if strncmp(user_response, 'N', 1) || strnc,p(user_response, 'S', 1)
         [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
         [NS_ped_on, EW_ped_on] = E_W_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
-    elseif (strncmp(user_response, 'E', 1) || strncmp(user_response, 'W', 1)
+    elseif (strncmp(user_response, 'E', 1) || strncmp(user_response, 'W', 1))
         [NS_ped_on, EW_ped_on] = E_W_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
         [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on, EW_ped_on, green_timing, yellow_timing, ljHandle);
     end
