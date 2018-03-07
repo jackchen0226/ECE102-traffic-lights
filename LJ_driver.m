@@ -29,12 +29,11 @@ yellow_timing = SPEED_MULTIPLIER;
 
 % MAIN SCRIPT
 % Various light tests
-%NS_yellow(false, ljHandle, LJ_ioPUT_DIGITAL_BIT)
-%N_S_traffic(false, false, 3, 3, ljHandle)
-%pause(3)
-%NS_red(false, ljHandle, LJ_ioPUT_DIGITAL_BIT)
+[NS_ped, EW_ped] = timings(5, ljHandle);
+NS_green(NS_ped, ljHandle, LJ_ioPUT_DIGITAL_BIT)
 
 % DAC
+%{
 [user_response, debug_mode] = prompt_user();
 NS_ped_on = false;
 EW_ped_on = false;
@@ -52,3 +51,4 @@ if debug_mode
     % TEST DEBUG
     run_debug(user_response, green_timing, yellow_timing, ljHandle)
 end
+%}
