@@ -26,7 +26,7 @@ function [N_S_ped_on, E_W_ped_on] = timings(desired_time, ljHandle)
         % If the North or South pedestrian button was not pressed before,
         % set the variable so that it has been pressed.
         if (~N_S_ped_on)
-            [Error, NSstate] = ljud_eGet(ljHandle, LJ_ioGET_DIGITAL_BIT,1, 0, 0);
+            [Error, NSstate] = ljud_eGet(ljHandle, LJ_ioGET_DIGITAL_BIT,1,0,0);
             Error_Message(Error)
             if (NSstate == 0)
                 N_S_ped_on = true;

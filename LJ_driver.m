@@ -24,7 +24,7 @@ addpath('LJ_controls_to_lights')
 SPEED_MULTIPLIER = 1.0; % Constant for speed that every timing is divided by
 
 % Initialized variables for light timings, need to find these later
-green_timing = 45 / SPEED_MULTIPLIER;
+green_timing = 45.0 / SPEED_MULTIPLIER;
 yellow_timing = 3.0; % Unchangings
 
 % MAIN SCRIPT
