@@ -22,6 +22,7 @@ function [NS_ped_on, EW_ped_on] = N_S_traffic(NS_ped_on_before, EW_ped_on_before
     NS_green(true, ljHandle, lj_dig)
     NS_yellow(false, ljHandle, lj_dig)
     NS_red(false, ljHandle, lj_dig)
+    EW_ped_red(false, ljHandle, lj_dac)
     if (EW_ped_on_before)
         EW_ped_white(true, ljHandle, lj_dig) % Test
         EW_ped_red(false, ljHandle, lj_dac) % Implement
