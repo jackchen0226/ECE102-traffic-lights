@@ -18,8 +18,9 @@ Error_Message(Error)
 Error = ljud_ePut(ljHandle, LJ_ioPUT_DIGITAL_BIT,8,0,0);
 Error_Message(Error)
 
-% Add wrapper functions to path
+% Add wrapper functions and driver tools to path
 addpath('LJ_controls_to_lights')
+addpath('driver_tools')
 
 %[user_response, debug_mode, speed] = prompt_user();
 
