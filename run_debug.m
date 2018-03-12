@@ -6,7 +6,11 @@ function run_debug(user_response, green_timing, yellow_timing, ljHandle)
 %       yellow_timing : Time in seconds of duration of yellow lights.
 %       ljHandle : Handle for LabJack U3, necesary for I/O.
 
-    ped_light_on = input('Test with crosswalk light on? (y/n)');
+    ped_light_on = input('Test with crosswalk light on? (y/n): ');
+    time_bool = input('Set light timing? (y/n, default 45 seconds): ', 's');
+    if (strncmpi(time_bool, y, 1))
+        green_timing = input('Set a time in seconds');
+    end
     if (strncmpi(ped_light_on, 'y', 1))
         if (strncmpi(user_response, 'N', 1) || strncmpi(user_response, 'S', 1))
             N_S_traffic(true, true, green_timing, yellow_timing, ljHandle);
