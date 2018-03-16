@@ -48,7 +48,6 @@ while ~debug_mode
     end
 end
 if debug_mode
-    % TEST DEBUG
     run_debug(user_response, green_timing, yellow_timing, ljHandle)
 end
-%}
+
